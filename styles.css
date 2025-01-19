@@ -1,4 +1,4 @@
-/* Import the hack-regular font */
+
 @font-face {
   font-family: 'hack-regular';
   src: url('hack-regular.ttf') format('truetype');
@@ -6,7 +6,7 @@
   font-style: normal;
 }
 
-/* General body styling */
+
 body {
   margin: 0;
   font-family: 'Courier New', monospace;
@@ -17,7 +17,7 @@ body {
   height: 100vh;
 }
 
-/* Terminal styling */
+
 .terminal {
   background-color: black;
   color: pink;
@@ -28,7 +28,7 @@ body {
   height: 400px;
   overflow-y: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  font-family: 'hack-regular'; /* Ensures font applies to terminal text */
+  font-family: 'hack-regular'; 
 }
 
 .line {
@@ -51,7 +51,7 @@ body {
   }
 }
 
-/* Button styles across pages */
+
 .buttons {
   margin-top: 20px;
   display: flex;
@@ -67,7 +67,7 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'hack-regular'; /* Applies the font to all buttons */
+  font-family: 'hack-regular';
 }
 
 .button:hover, .home-btn:hover, .delete-all-btn:hover, .species-buttons button:hover {
@@ -75,14 +75,14 @@ body {
   color: white;
 }
 
-/* Guestbook-specific styles */
+
 .comment {
   background-color: black;
   color: pink;
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 5px;
-  font-family: 'hack-regular'; /* Ensures font applies to comments */
+  font-family: 'hack-regular'; 
   white-space: pre-wrap;
   position: relative;
   width: 100%;
