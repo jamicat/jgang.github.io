@@ -67,7 +67,7 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'hack-regular';
+  font-family: 'hack-regular'; 
 }
 
 .button:hover, .home-btn:hover, .delete-all-btn:hover, .species-buttons button:hover {
@@ -87,6 +87,26 @@ body {
   position: relative;
   width: 100%;
   box-sizing: border-box;
+}
+
+.infText {
+  position: fixed; 
+  font-family: 'hack-regular', monospace;
+  bottom: 20px;
+  left: 20px; 
+  font-size: 1em; 
+  color: #000000; 
+  background-color: #ffc0cb; 
+  padding: 10px 15px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  white-space: nowrap;
+}
+
+#weather-output {
+  font-family: 'hack-regular', monospace;
+  font-weight: bold;
+  color: #333;
 }
 
 .comment h4 {
