@@ -10,11 +10,13 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Courier New', monospace;
   background-color: beige;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
 }
 
@@ -26,7 +28,8 @@ body {
   border-radius: 8px;
   width: 80%;
   max-width: 600px;
-  height: 40vh;
+  max-height: 70vh; 
+  height: auto;
   overflow-y: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   font-family: 'hack-regular'; 
