@@ -387,26 +387,20 @@ function showArt() {
     'Chibi',
   ];
 
-  const artIntro = "Here is my current art collection! The most recent commissioned piece is Jamie in Tokyo. His hair has been redyed and I plan to keep the change going forwards. He is designed to match my real-life fashion choices and tastes! :D<br>";
-
   function displayTree() {
-    
-    let treeHTML = '<br>art<br>';
+    let treeHTML = '<br>art/<br>';
     artFiles.forEach((art) => {
       treeHTML += `├── <span class="art-link" style="color: lightblue; cursor: pointer;" data-file="${art}">${art}</span><br>`;
     });
-    typingArea.innerHTML = artIntro + treeHTML;
-
-    
+    typingArea.innerHTML += treeHTML; 
     addArtClickEvents();
-    buttonArea.style.display = 'flex';
+    buttonArea.style.display = 'flex'; 
   }
 
   function addArtClickEvents() {
-    const links = document.querySelectorAll('.art-link'); 
+    const links = document.querySelectorAll('.art-link');
     links.forEach((link) => {
       link.addEventListener('click', () => {
-     
         const filename = `${link.getAttribute('data-file').replace(/\s+/g, '-')}.png`;
         displayArt(filename);
       });
@@ -414,12 +408,12 @@ function showArt() {
   }
 
   function displayArt(filename) {
-   
+    
     typingArea.innerHTML = `<br><img src="${filename}" alt="${filename}" style="max-width:80%; height:auto; display:block; margin: 10px auto;"><br>`;
     displayTree(); 
   }
 
-  displayTree(); 
+  displayTree(); /
 }
 
 
