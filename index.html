@@ -111,6 +111,49 @@
 </head>
 <body>
 
+<style>
+  body {
+    transform: scale(1);
+    transform-origin: top left;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .scale-small {
+    transform: scale(0.8);
+    transform-origin: top center;
+  }
+  .scale-medium {
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+  .scale-large {
+    transform: scale(0.95);
+    transform-origin: top left;
+  }
+</style>
+<script>
+  function adjustScale() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const body = document.body;
+    body.classList.remove("scale-small", "scale-medium", "scale-large");
+    if (width <= 480 || height <= 480) {
+      body.classList.add("scale-small");
+    } else if (width <= 768 || height <= 768) {
+      body.classList.add("scale-medium");
+    } else if (width <= 1366 || height <= 1366) {
+      body.classList.add("scale-large");
+    }
+  }
+  window.addEventListener("load", adjustScale);
+  window.addEventListener("resize", adjustScale);
+</script>
+
+
+	
+
+
+	
 <div class="image-container" style="position: relative;">
   <img src="fursona.png" alt="Fursona" class="fursona-image" style="display: block;">
   <div class="infText" id="mood-text" style="background-color: #ffe59a; display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 5px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Mood: relaxed...</div>
