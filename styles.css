@@ -1,3 +1,5 @@
+
+
 @font-face {
   font-family: 'hack-regular';
   src: url('hack-regular.ttf') format('truetype');
@@ -14,28 +16,25 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 0; 
-  box-sizing: border-box; 
 }
 
 
 .terminal {
   background-color: black;
   color: pink;
-  padding: 2%; 
+  padding: 20px;
   border-radius: 8px;
-  width: clamp(300px, 80%, 600px); 
-  height: clamp(200px, 50vh, 400px); 
+  width: 80%;
+  max-width: 600px;
+  height: 400px;
   overflow-y: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  font-family: 'hack-regular';
+  font-family: 'hack-regular'; 
 }
-
 
 .line {
   display: flex;
   flex-wrap: wrap;
-  font-size: clamp(12px, 1em, 16px); 
 }
 
 .cursor {
@@ -59,18 +58,17 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'hack-regular';
-  gap: 10px; 
+}
 
 .button, .home-btn, .delete-all-btn, .species-buttons button {
   background-color: pink;
   color: black;
   padding: 10px;
-  margin: 0; 
+  margin: 5px 0;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'hack-regular';
-  font-size: clamp(14px, 1rem, 18px); 
+  font-family: 'hack-regular'; 
 }
 
 .button:hover, .home-btn:hover, .delete-all-btn:hover, .species-buttons button:hover {
@@ -85,34 +83,31 @@ body {
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 5px;
-  font-family: 'hack-regular';
+  font-family: 'hack-regular'; 
   white-space: pre-wrap;
   position: relative;
-  width: 100%; 
+  width: 100%;
   box-sizing: border-box;
-  font-size: clamp(12px, 1em, 16px); 
 }
 
 .infText {
-  position: fixed;
+  position: fixed; 
   font-family: 'hack-regular', monospace;
-  bottom: 20px;
-  left: 20px;
-  font-size: clamp(12px, 1em, 14px); 
-  color: #000000;
-  background-color: #ffc0cb;
-  padding: 10px 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  bottom: 20px; 
+  left: 20px; 
+  font-size: 1em; 
+  color: #000000; 
+  background-color: #ffc0cb; 
+  padding: 10px 15px; 
+  border-radius: 8px; /
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
   white-space: nowrap;
 }
-
 
 #weather-output {
   font-family: 'hack-regular', monospace;
   font-weight: bold;
-  color: #333;
-  font-size: clamp(14px, 1rem, 18px);
+  color: #333; 
 }
 
 .comment h4 {
@@ -137,41 +132,9 @@ body {
   color: pink;
   cursor: pointer;
   display: none;
+
 }
 
 .delete-btn:hover {
   color: red;
-}
-
-
-@media (max-width: 768px) {
-  .terminal {
-    width: 90%; 
-    height: 60vh; 
-  }
-
-  .infText {
-    font-size: 0.9em; 
-  }
-
-  .buttons {
-    flex-direction: column; 
-    gap: 8px; 
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    flex-direction: column; 
-    padding: 10px; 
-  }
-
-  .terminal {
-    width: 95%; 
-    height: 50vh; 
-  }
-
-  .infText {
-    font-size: 0.8em; 
-  }
 }
