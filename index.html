@@ -387,12 +387,14 @@
     'Chibi',
   ];
 
+   const artIntro = "Here is my current art collection! The most recent commissioned piece is Jamie in Tokyo. His hair has been redyed and I plan to keep the change going forwards. He is designed to match my real-life fashion choices and tastes! :D<br><br>";
+
   function displayTree() {
     let treeHTML = '<br>art<br>';
     artFiles.forEach((art) => {
       treeHTML += `├── <span class="art-link" style="color: lightblue; cursor: pointer;" data-file="${art}">${art}</span><br>`;
     });
-    typingArea.innerHTML += treeHTML; 
+    typingArea.innerHTML = artIntro + treeHTML; 
     addArtClickEvents();
     buttonArea.style.display = 'flex'; 
   }
