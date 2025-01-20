@@ -110,9 +110,13 @@
   </style>
 </head>
 <body>
-  <div class="image-container">
-    <img src="fursona.png" alt="Fursona">
-  </div>
+
+<div class="image-container" style="position: relative;">
+  <img src="fursona.png" alt="Fursona" class="fursona-image" style="display: block;">
+  <div class="infText" id="mood-text" style="background-color: #ffe59a; display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 5px;">Mood: relaxed...</div>
+</div>
+
+
   <div class="terminal" id="terminal">
     <div id="typing-area"></div>
     <div class="buttons" id="button-area" style="display: none;">
@@ -129,7 +133,53 @@
   <img src="dog.png" class="dog" id="dog" alt="Dog">
   <audio id="dog-audio" src="dog-bark.mp3" loop></audio>
 
+
+<script>
+const fursonaImage = document.querySelector('.fursona-image');
+  const moodText = document.getElementById('mood-text');
+
+  fursonaImage.addEventListener('mouseover', () => {
+    moodText.style.display = 'block'; 
+  });
+
+  fursonaImage.addEventListener('mouseout', () => {
+    moodText.style.display = 'none'; 
+  });
+  </script>
+
+
+
+
+<div id="weather-container" class="infText">
+  Brit weather: <span id="weather-output"></span>
+</div>
+<script>
+  const apiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=53.765762&lon=-2.692337&appid=3b394dfa0c0a624d5b6d72af1bef9a64";
+  fetch(apiUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response not ok");
+      }
+      return response.json();
+    })
+    .then(data => {
+      const description = data.weather[0].description;
+      const formattedDescription = description.charAt(0).toUpperCase() + description.slice(1);
+
+      document.getElementById("weather-output").textContent = formattedDescription;
+    })
+    .catch(error => {
+      console.error("Error fetching weather:", error);
+      document.getElementById("weather-output").textContent = "unable to fetch.";
+    });
+</script>
+
+
+
+
+
   <script>
+  
     const terminal = document.getElementById('terminal');
     const typingArea = document.getElementById('typing-area');
     const buttonArea = document.getElementById('button-area');
@@ -435,9 +485,11 @@ function showArt() {
   displayTree(); 
 }
 
-
-	
     type();
   </script>
+  
+  
+  
+  
 </body>
 </html>
