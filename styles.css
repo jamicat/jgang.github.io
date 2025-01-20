@@ -146,6 +146,9 @@ body {
 
 @media (max-width: 1080px) and (max-height: 2400px) {
  
+  body {
+  height: 90vh;
+}
   
   .terminal {
     width: 85%; 
@@ -180,7 +183,9 @@ body {
 
 @media (max-width: 768px) {
 
-  
+   body {
+  height: 90vh;
+}
   
   .terminal {
     width: 85%; 
@@ -210,9 +215,9 @@ body {
 @media (max-width: 480px) {
 
 
-  .body {
-   height: 110vh;
- }
+   body {
+  height: 90vh;
+}
   
    .terminal {
     width: 85%; 
@@ -242,8 +247,7 @@ body {
 
 @media (max-width: 1366px) and (max-height: 768px) {
   
- 
-  
+
   .terminal {
     width: 85%; 
     height: 45vh; 
