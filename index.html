@@ -375,8 +375,7 @@
       typeExitMessage();
     }
 
-
-function showArt() {
+ function showArt() {
   buttonArea.style.display = 'none';
   typingArea.innerHTML = '';
 
@@ -388,41 +387,14 @@ function showArt() {
     'Chibi',
   ];
 
-  const artIntro = "Explore the art collection below. Each piece captures a different side of Jamie's journey!";
-
-  function typeOutText(text, callback, isHTML = false) {
-    let index = 0;
-
-    function typeChar() {
-      if (index < text.length) {
-        if (isHTML) {
-          typingArea.innerHTML = text.substring(0, index + 1); // Directly render HTML
-        } else {
-          typingArea.textContent += text[index]; // Safely type plain text
-        }
-        index++;
-        setTimeout(typeChar, 20); // Adjusted for faster typing
-      } else {
-        typingArea.innerHTML += '<br>'; // Add a line break after typing
-        if (callback) callback();
-      }
-    }
-
-    typeChar();
-  }
-
   function displayTree() {
-    const treeHTML = artFiles
-      .map(
-        (art) =>
-          `├── <span class="art-link" style="color: lightblue; cursor: pointer;" data-file="${art}">${art}</span>`
-      )
-      .join('<br>');
-
-    typeOutText(`art/<br>${treeHTML}`, () => {
-      addArtClickEvents();
-      buttonArea.style.display = 'flex'; // Show buttons after typing
-    }, true); // Render HTML
+    let treeHTML = '<br>art/<br>';
+    artFiles.forEach((art) => {
+      treeHTML += `├── <span class="art-link" style="color: lightblue; cursor: pointer;" data-file="${art}">${art}</span><br>`;
+    });
+    typingArea.innerHTML += treeHTML; 
+    addArtClickEvents();
+    buttonArea.style.display = 'flex'; 
   }
 
   function addArtClickEvents() {
@@ -436,14 +408,13 @@ function showArt() {
   }
 
   function displayArt(filename) {
-    typingArea.innerHTML += `<br><img src="${filename}" alt="${filename}" style="max-width:80%; height:auto; display:block; margin: 10px auto;"><br>`;
-    displayTree(); // Show the tree again after the image
+  
+    typingArea.innerHTML = `<br><img src="${filename}" alt="${filename}" style="max-width:80%; height:auto; display:block; margin: 10px auto;"><br>`;
+    displayTree(); 
   }
 
-  // Start by typing the introduction, then the tree
-  typeOutText(artIntro, displayTree);
+  displayTree(); 
 }
-
 
 	
     type();
