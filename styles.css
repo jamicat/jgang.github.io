@@ -296,6 +296,7 @@ body {
   .terminal {
     width: 85%; 
     height: 45vh; 
+    margin-bottom: 0px;
   }
   .buttons {
     gap: 8px; 
