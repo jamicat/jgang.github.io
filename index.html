@@ -376,7 +376,7 @@
     }
 
 
- function showArt() {
+function showArt() {
   buttonArea.style.display = 'none';
   typingArea.innerHTML = '';
 
@@ -388,16 +388,35 @@
     'Chibi',
   ];
 
-	   
+  const artIntro = "Explore the art collection below. Each piece captures a different side of Jamie's journey!";
+
+  function typeOutText(text, callback) {
+    let index = 0;
+
+    function typeChar() {
+      if (index < text.length) {
+        typingArea.innerHTML += text[index];
+        index++;
+        setTimeout(typeChar, typingSpeed);
+      } else {
+        typingArea.innerHTML += '<br>'; 
+        if (callback) callback();
+      }
+    }
+
+    typeChar();
+  }
 
   function displayTree() {
-    let treeHTML = '<br>art/<br>';
+    let treeHTML = 'art/<br>';
     artFiles.forEach((art) => {
       treeHTML += `├── <span class="art-link" style="color: lightblue; cursor: pointer;" data-file="${art}">${art}</span><br>`;
     });
-    typingArea.innerHTML += treeHTML; 
-    addArtClickEvents();
-    buttonArea.style.display = 'flex'; 
+
+    typeOutText(treeHTML, () => {
+      addArtClickEvents();
+      buttonArea.style.display = 'flex'; 
+    });
   }
 
   function addArtClickEvents() {
@@ -411,13 +430,13 @@
   }
 
   function displayArt(filename) {
-  
     typingArea.innerHTML = `<br><img src="${filename}" alt="${filename}" style="max-width:80%; height:auto; display:block; margin: 10px auto;"><br>`;
-    displayTree(); 
+    typeOutText('art/', displayTree); 
   }
 
-  displayTree(); 
- }
+ 
+  typeOutText(artIntro, displayTree);
+}
 
 	
     type();
