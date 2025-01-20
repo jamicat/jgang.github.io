@@ -118,6 +118,7 @@
     <div class="buttons" id="button-area" style="display: none;">
       <button class="button" onclick="showAbout()">About</button>
       <button class="button" onclick="showSocials()">Socials</button>
+	  <button class="button" onclick="showArt()">Art</button>
       <button class="button" onclick="window.location.href='/book/'">Go to Guestbook</button>
       <button class="button" onclick="exitTerminal()">Exit</button>
     </div>
@@ -144,7 +145,7 @@
 
     let lineIndex = 0;
     let charIndex = 0;
-    let typingSpeed = 43;
+    let typingSpeed = 30;
     let slowEllipsesSpeed = 900;
     let hasCleared = false;
     let dogVolumeEnabled = false;
@@ -255,7 +256,7 @@
         } else {
           clearInterval(ellipsisInterval);
           if (callback) {
-            typingSpeed = 43;
+            typingSpeed = 30;
             callback();
           }
         }
@@ -374,6 +375,48 @@
       typeExitMessage();
     }
 
+ function showArt() {
+  buttonArea.style.display = 'none';
+  typingArea.innerHTML = '';
+
+  const artFiles = [
+    'Jamie in Tokyo',
+    'Album Cover Jamie',
+    'Blue Jamie',
+    'Reference Sheet',
+    'Chibi',
+  ];
+
+  function displayTree() {
+    let treeHTML = '<br>art/<br>';
+    artFiles.forEach((art) => {
+      treeHTML += `├── <span class="art-link" style="color: lightblue; cursor: pointer;" data-file="${art}">${art}</span><br>`;
+    });
+    typingArea.innerHTML += treeHTML; // Append tree under existing content
+    addArtClickEvents();
+    buttonArea.style.display = 'flex'; // Show buttons after tree
+  }
+
+  function addArtClickEvents() {
+    const links = document.querySelectorAll('.art-link');
+    links.forEach((link) => {
+      link.addEventListener('click', () => {
+        const filename = `${link.getAttribute('data-file').replace(/\s+/g, '-')}.png`;
+        displayArt(filename);
+      });
+    });
+  }
+
+  function displayArt(filename) {
+    // Clear existing content, display image, and then append tree and buttons
+    typingArea.innerHTML = `<br><img src="${filename}" alt="${filename}" style="max-width:80%; height:auto; display:block; margin: 10px auto;"><br>`;
+    displayTree(); // Display the tree underneath the image
+  }
+
+  displayTree(); // Initially display the tree
+}
+
+	
     type();
   </script>
 </body>
