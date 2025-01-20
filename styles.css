@@ -167,6 +167,7 @@ body {
     max-height: 350px; 
     padding: 10px; 
     font-size: 0.9em; 
+    margin-bottom: 50px;
   }
 
   .buttons {
@@ -187,7 +188,7 @@ body {
   }
 
   .dog-volume-container {
-    position: fixed;
+    position: absolute;
     bottom: 15px;
     right: 15px;
   }
@@ -215,6 +216,7 @@ body {
     max-height: 350px; 
     padding: 10px; 
     font-size: 0.9em; 
+    margin-bottom: 50px;
   }
   .buttons {
     gap: 8px; 
@@ -235,7 +237,7 @@ body {
   }
 
   .dog-volume-container {
-    position: fixed;
+    position: absolute;
     bottom: 15px;
     right: 15px;
   }
@@ -259,6 +261,7 @@ body {
     max-height: 350px; 
     padding: 10px; 
     font-size: 0.9em; 
+    margin-bottom: 50px;
   }
 
 
@@ -280,7 +283,7 @@ body {
   }
 
   .dog-volume-container {
-    position: fixed;
+    position: absolute;
     bottom: 15px;
     right: 15px;
   }
