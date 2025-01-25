@@ -75,8 +75,8 @@ body {
 }
 
 .button:hover, .home-btn:hover, .delete-all-btn:hover, .species-buttons button:hover {
-  background-color: darkred;
-  color: white;
+  background-color: #ff9a9e; 
+  transform: scale(1.05); 
 }
 
 
