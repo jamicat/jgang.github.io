@@ -43,7 +43,8 @@
 
     .button {
       font-size: 1.0em;
-      background-color: pink;
+      background-color: #ffb6c1;
+      transition: background-color 0.3s, transform 0.2s;
       color: black;
       padding: 10px;
       border: none;
@@ -53,9 +54,15 @@
     }
 
     .button:hover {
-      background-color: darkred;
-      color: white;
+      background-color: #ff9a9e; 
+      transform: scale(1.05); 
     }
+    .button:active{
+        background-color: #e6788e; 
+  transform: scale(0.95); 
+	    
+	  }
+	  
 
     .buttons {
       display: flex;
@@ -96,8 +103,8 @@
 
     .button.active {
       animation: toggleOn 0.5s infinite alternate;
-      background-color: darkred;
-      color: white;
+      background-color: #e6788e; 
+      
     }
 
     @keyframes toggleOn {
