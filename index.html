@@ -58,8 +58,8 @@
       transform: scale(1.05); 
     }
     .button:active{
-        background-color: #e6788e; 
-  transform: scale(0.95); 
+      background-color: #e6788e; 
+      transform: scale(0.95); 
 	    
 	  }
 	  
@@ -247,14 +247,15 @@ const moodText = document.getElementById('mood-text');
     dog.style.top = `${dogY}px`;
     moveDog();
 
-    // he grows
-    dogImage.addEventListener('mouseover', () => {
-    let scale = 1; /
-    growInterval = setInterval(() => {
-    scale += 0.01; 
-    dogImage.style.transform = `scale(${scale})`;
-    }, 50); 
-    });
+   //grow
+   dogImage.addEventListener('mouseover', () => {
+   let scale = 1; 
+   growInterval = setInterval(() => {
+   scale += 0.01; 
+   dogImage.style.transform = `scale(${scale})`;
+   }, 50); 
+   });
+	
 
     dogImage.addEventListener('mouseout', () => {
     clearInterval(growInterval); 
