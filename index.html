@@ -6,17 +6,26 @@
   <title>Jamie></title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    body {
-      background: url('bg.jpg') no-repeat center center fixed;
+	  
+   body {
+      background: url('bg.jpg') repeat-y  center center fixed;
       background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height: 100vh;
+      height: 200vh;
       margin: 0;
-      overflow: hidden; 
+      overflow-x: hidden; 
     }
+	
+   @keyframes scrollBackground {
+   from {
+    background-position-y: 0;
+       }
+   to  {
+    background-position-y: 100%;
+       }
 
     .image-container {
       display: flex;
