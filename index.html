@@ -144,7 +144,7 @@
     </div>
   </div>
   <div class="dog-volume-container">
-    <button id="toggle-dog-button" class="button" style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Pet Audio: OFF</button>
+    <button id="toggle-dog-button" class="button" style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Dog Audio: OFF</button>
   </div>
   <img src="dog.png" class="dog" id="dog" alt="Dog">
   <audio id="dog-audio" src="dog-bark.mp3" loop></audio>
@@ -298,12 +298,12 @@ const moodText = document.getElementById('mood-text');
       if (dogVolumeEnabled) {
         dogAudio.play();
         toggleDogButton.classList.add('active');
-        toggleDogButton.textContent = 'Pet Audio: ON';
+        toggleDogButton.textContent = 'Dog Audio: ON';
       } else {
         dogAudio.pause();
         dogAudio.currentTime = 0;
         toggleDogButton.classList.remove('active');
-        toggleDogButton.textContent = 'Pet Audio: OFF';
+        toggleDogButton.textContent = 'Dog Audio: OFF';
       }
     });
 
