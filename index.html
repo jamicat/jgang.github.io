@@ -92,8 +92,8 @@
       width: 100px;
       height: auto;
       z-index: 10;
-      pointer-events: none; 
-     transition: transform 0.3s ease;
+      pointer-events: auto; 
+      transition: transform 0.3s ease;
     }
 
     .dog-volume-container {
@@ -202,6 +202,7 @@ const moodText = document.getElementById('mood-text');
     const dogImage = document.getElementById('dog');
     const toggleDogButton = document.getElementById('toggle-dog-button');
     let growInterval;
+    let scale = 1; 
 
     const messages = [
       'The Catrix has you',
@@ -248,19 +249,21 @@ const moodText = document.getElementById('mood-text');
     moveDog();
 
    //grow
+   dogImage.style.pointerEvents = 'auto';
    dogImage.addEventListener('mouseover', () => {
-   let scale = 1; 
+   clearInterval(growInterval); 
    growInterval = setInterval(() => {
-   scale += 1; 
-   dogImage.style.transform = `scale(${scale})`;
+    scale += 0.01; 
+    dogImage.style.transform = `scale(${scale})`;
    }, 50); 
    });
 	
 
-    dogImage.addEventListener('mouseout', () => {
-    clearInterval(growInterval); 
-    dogImage.style.transform = 'scale(1)'; 
-    });
+   dogImage.addEventListener('mouseout', () => {
+   clearInterval(growInterval); 
+   scale = 1; 
+   dogImage.style.transform = `scale(${scale})`; 
+   });
 	  
 	  
     // dog loud/quiet
