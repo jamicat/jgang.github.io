@@ -251,7 +251,7 @@ const moodText = document.getElementById('mood-text');
    dogImage.addEventListener('mouseover', () => {
    let scale = 1; 
    growInterval = setInterval(() => {
-   scale += 0.01; 
+   scale += 1; 
    dogImage.style.transform = `scale(${scale})`;
    }, 50); 
    });
