@@ -151,8 +151,10 @@
     </div>
   </div>
   <div class="dog-volume-container">
+    <button id="music-toggle-button" class="button" style="color: #ffe7cd; font-family: 'nunito', sans-serif; text-shadow: -1px -1px 0 rgba(255, 182, 193, 0.8), 1px -1px 0 rgba(255, 182, 193, 0.8), -1px 1px 0 rgba(255, 182, 193, 0.8), 1px 1px 0 rgba(255, 182, 193, 0.8); margin-bottom: 10px; text-decoration: line-through;">🎵</button>
     <button id="toggle-dog-button" class="button" style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Dog Audio: OFF</button>
   </div>
+  <audio id="music-audio" src="fromadream.mp3" loop></audio>
   <img src="dog.png" class="dog" id="dog" alt="Dog">
   <audio id="dog-audio" src="dog-bark.mp3" loop></audio>
 
@@ -195,6 +197,21 @@ const moodText = document.getElementById('mood-text');
       console.error("Error fetching weather:", error);
       document.getElementById("weather-output").textContent = "unable to fetch.";
     });
+
+
+const musicToggleButton = document.getElementById("music-toggle-button");
+const musicAudio = document.getElementById("music-audio");
+
+
+musicToggleButton.addEventListener("click", () => {
+  if (musicAudio.paused) {
+    musicAudio.play();
+    musicToggleButton.style.textDecoration = "none"; 
+  } else {
+    musicAudio.pause();
+    musicToggleButton.style.textDecoration = "line-through"; 
+  }
+});
 </script>
 
 
