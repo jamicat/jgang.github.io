@@ -123,6 +123,19 @@
         transform: scale(1.1);
       }
 
+    @keyframes bounce {
+        0%, 100% {
+        transform: scale(1); 
+      }
+        50% {
+        transform: scale(1.1); 
+      }
+}
+
+.button.bouncing {
+  animation: bounce 1s infinite; /* Bouncing animation */
+}
+
 	    
     }
   </style>
