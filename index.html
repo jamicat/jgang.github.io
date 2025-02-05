@@ -123,19 +123,7 @@
         transform: scale(1.1);
       }
 
-    @keyframes bounce {
-        0%, 100% {
-        transform: scale(1); 
-      }
-        50% {
-        transform: scale(1.5); 
-      }
-}
-
-   .button.bouncing 
-      {
-        animation: bounce 1s infinite; 
-      }
+   
 
 	    
     }
@@ -215,17 +203,16 @@ const moodText = document.getElementById('mood-text');
 
 const musicToggleButton = document.getElementById("music-toggle-button");
 const musicAudio = document.getElementById("music-audio");
-musicAudio.volume = 0.5;
+musicAudio.volume = 0.4;
 
 musicToggleButton.addEventListener("click", () => {
   if (musicAudio.paused) {
     musicAudio.play();
     musicToggleButton.style.textDecoration = "none"; 
-    musicToggleButton.classList.add("bouncing");
+    
   } else {
     musicAudio.pause();
     musicToggleButton.style.textDecoration = "line-through"; 
-    musicToggleButton.classList.remove("bouncing");
   }
 });
 </script>
