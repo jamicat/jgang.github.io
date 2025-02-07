@@ -181,6 +181,9 @@ const moodText = document.getElementById('mood-text');
   Brit weather: <span id="weather-output"></span>
 </div>
 <script>
+	
+  musicToggleButton.classList.add('active');
+	
   const apiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=53.765762&lon=-2.692337&appid=3b394dfa0c0a624d5b6d72af1bef9a64";
   fetch(apiUrl)
     .then(response => {
@@ -209,12 +212,12 @@ musicToggleButton.addEventListener("click", () => {
   if (musicAudio.paused) {
     musicAudio.play();
     musicToggleButton.style.textDecoration = "none"; 
-    musicToggleButton.classList.add('active');
+    
     
   } else {
     musicAudio.pause();
     musicToggleButton.style.textDecoration = "line-through"; 
-    musicToggleButton.classList.remove('active');
+    
   }
 });
 </script>
