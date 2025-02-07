@@ -182,7 +182,7 @@ const moodText = document.getElementById('mood-text');
 </div>
 <script>
 	
-  musicToggleButton.classList.add('active');
+  
 	
   const apiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=53.765762&lon=-2.692337&appid=3b394dfa0c0a624d5b6d72af1bef9a64";
   fetch(apiUrl)
@@ -211,6 +211,7 @@ musicAudio.volume = 0.9;
 musicToggleButton.addEventListener("click", () => {
   if (musicAudio.paused) {
     musicAudio.play();
+   musicToggleButton.classList.add('active');
     musicToggleButton.style.textDecoration = "none"; 
     
     
