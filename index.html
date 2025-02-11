@@ -363,9 +363,12 @@ musicToggleButton.addEventListener("click", () => {
           }
         }
       } else {
-        showCursor();
+        showCursor();      
+        setTimeout(() => {
+          buttonArea.style.display = 'flex';
+        }, 500); 
 
-const videoContainer = document.createElement('div');
+    const videoContainer = document.createElement('div');
     videoContainer.id = 'video-container';
     videoContainer.style.textAlign = "center"; 
     videoContainer.style.marginBottom = "10px"; 
@@ -379,11 +382,7 @@ const videoContainer = document.createElement('div');
     `;
 
     typingArea.insertBefore(videoContainer, buttonArea);
-
 	      
-        setTimeout(() => {
-          buttonArea.style.display = 'flex';
-        }, 500); 
       }
     }
 
