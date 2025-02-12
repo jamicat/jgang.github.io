@@ -293,11 +293,7 @@ body {
 
 @media (max-width: 1366px) and (max-height: 768px) {
   
-  .terminal {
-    width: 85%; 
-    height: 45vh; 
-    margin-bottom: 0px;
-  }
+  
   .buttons {
     gap: 8px; 
   }
@@ -307,9 +303,7 @@ body {
     font-size: 0.95em; 
   }
   body {
-    padding: 15px; 
-    width: 80%;
-    height: 110vh;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
