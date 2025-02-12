@@ -363,20 +363,7 @@ musicToggleButton.addEventListener("click", () => {
           }
         }
       } else {
-        showCursor();      
-
-	      typingArea.innerHTML += `
-      <div style="text-align: center; margin-bottom: 10px;">
-        <iframe width="560" height="315" 
-          src="https://www.youtube.com/embed/G7i7RVj6B8I?autoplay=0" 
-          title="YouTube video player" frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      </div>
-    `;
-
-	      
+        showCursor();         
         setTimeout(() => {
           buttonArea.style.display = 'flex';
         }, 500); 
